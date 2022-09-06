@@ -31,7 +31,7 @@ The 5 pillars could be useful for the overall experience of the blockchain to be
 
 Chapter 2, Day 1 
 
-'''cadence
+```cadence
 pub contract JacobTucker {
 
     pub let is: String
@@ -42,5 +42,5 @@ pub contract JacobTucker {
 }
 
 ///15:53:40  Deployment  Deployed Contract To: 0x03
-'''
+```
 
