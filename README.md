@@ -41,6 +41,6 @@ pub contract JacobTucker {
     }
 }
 
-///15:53:40  Deployment  Deployed Contract To: 0x03
+//15:53:40  Deployment  Deployed Contract To: 0x03
 ```
 
