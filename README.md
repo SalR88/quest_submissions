@@ -11,7 +11,7 @@ DECENTRALIZED: Nobody owns it. There is no central authority dictating stuff.
 DATABASE: You can store information on it.
 PUBLIC: Anyone can view the data on it.
 
-<u> Explain what a Smart Contract is. You can read this to help you, but you don't have to: https://www.ibm.com/topics/smart-contracts <u>
+<u> Explain what a Smart Contract is. You can read this to help you, but you don't have to: https://www.ibm.com/topics/smart-contracts 
 
 Has a function that anyone can call
 Takes in a parameter (the person's favourite fruit)
