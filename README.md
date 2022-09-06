@@ -2,25 +2,32 @@
 
 Septemeber 2022 Emerald City Bootcamp - Beginner Cadence Course
 
+----------
+
 Chapter 1, Day 1
 
-<u>Explain what the Blockchain is in your own words.<u> 
 
-OPEN: Anyone can interact with it. There are no restrictions.
-DECENTRALIZED: Nobody owns it. There is no central authority dictating stuff.
-DATABASE: You can store information on it.
-PUBLIC: Anyone can view the data on it.
+Blockchain is a decentralized database that anyone can view and interact with. 
 
-<u> Explain what a Smart Contract is. You can read this to help you, but you don't have to: https://www.ibm.com/topics/smart-contracts 
+A smart contract is data that stores parameters and makes changes to the blockchain with a function that anyone can call. 
 
-Has a function that anyone can call
-Takes in a parameter (the person's favourite fruit)
-Stores that parameter in some data
-Sends the updated data to the Blockchain (happens automatically)
+A transaction is a paid function call that changes the data on the blockchain and costs money depending on which blockchain you are on.
+A script only views the blockchain and cannot make changes to it and doesn't cost money. 
 
-<u>Explain the difference between a script and a transaction.<u>
+----------
 
-a transaction is a paid transaction that is used as a function call 
+Chapter 1, Day 2
+
+What are the 5 Cadence Programming Language Pillars?
+
+Safey and security, clarity, approachability, developer experience, resource oriented programming
+
+In your opinion, even without knowing anything about the Blockchain or coding, why could the 5 Pillars be useful (you don't have to answer this for #5)?
+
+The 5 pillars could be useful for the overall experience of the blockchain to be a good experience. 
+
+
+-----
 
 
 
