@@ -29,5 +29,21 @@ The 5 pillars could be useful for the overall experience of the blockchain to be
 
 -----
 
+Chapter 2, Day 1 
+
+
+pub contract JacobTucker {
+
+    pub let is: String
+
+    init() {
+        self.is = "the best"
+    }
+}
+
+15:53:40 
+Deployment 
+Deployed Contract To: 0x03
+
 
 
