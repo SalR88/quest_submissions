@@ -126,4 +126,33 @@ transaction() {
 ```
 -----------------
 
+Chapter 2 Day 3
 
+When you access elements of a dictionary, it returns the value as an optional. so it may be Int or it may be nil. using a force-unwrap operator would fix this error. Returning an optional would be better that using a force-wrap operator because it won't abort if nil is returned. 
+
+#Force-unwrap example
+pub fun main(): String {
+    let thing: {String: Int} = {"Hi": 1, "Bonjour": 2, "Hola": 3}
+    return thing[1]!
+    
+    //the force-unwrap operator is returning the thing we put from the optional, this example returns "Hi"
+    
+#Script for example Array
+```cadence
+pub fun main() {
+    var favoritepeople: [String] = ["L", "M", "S"]
+    log(favoritepeople)
+  }
+```
+#script for example dictionary 
+```cadence
+pub main() {
+    var socialMedia: {String: Int} = {"reddit":2, "instagram": 1, "youtube": 3, "facebook": 0, "twitter": 0}
+    log(socialMedia.keys)
+}
+```
+    
+    
+---------------------
+
+  
