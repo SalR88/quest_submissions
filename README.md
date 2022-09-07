@@ -175,6 +175,102 @@ How to fix it
 
 -When you access elements of a dictionary, it returns the value as an optional. so it may be Int or it may be nil. using a force-unwrap operator would fix this error. Returning an optional would be better that using a force-wrap operator because it won't abort if nil is returned. 
 
+
+------
+
+Chapter 2 day 4
+
+**i was getting a lot of errors in flow playground and wasn't sure what the problem was. please take a look at the contract, transaction, and script to let me know what I'm doing wrong
+
+
+'''cadence
+pub contract DreamKeeper {    
+
+    pub var dreamer: {String: Dreamers}
+
+    pub struct Dreamers {
+
+        pub var dreamerName: String
+        pub var dreamGuide: String
+        pub var dreamMonster: String
+        pub var dreamAnalysis: String
+
+        init(_dreamerName: dreamerName, _dreamGuide: String, _dreamMonster: String, _dreamAnalysis: String) {
+        self.dreamerName = _dreamerName
+        self.dreamGuide = _dreamGuide
+        self.dreamMonster = _dreamMonster
+        self.dreamAnalysis = _dreamAnalysis
+        }
+    }
+
+    pub fun addDreamer (dreamerName: String, dreamGuide: String, dreamMonster: String, dreamAnalysist: String) {
+        let newDreamer = Dreamers(_dreamerName: dreamerName, _dreamGuide: dreamGuide, _dreamMonster: dreamMonster, _dreamAnalysis: dreamAnalysis)
+        self.dreamer[dreamerName] = newDreamer
+    }
+
+    init() {
+        self.dreamer = {}
+    }
+    
+
+}
+``` 
+
+```cadence
+import DreamKeeper from 0x01
+
+transaction(dreamerName: String, dreamGuide: Int, dreamMonster: String, dreamAnalysis: String) {
+    prepare(acct: AuthAccount) {
+    }
+
+    execute {
+      DreamKeeper.addDreamer(dreamerName: dreamerName, dreamGuide: dreamGuide, 
+      dreamMonster: dreamMonster, dreamAnalysis: dreamAnalysis)
+    }
+}
+```
+
+```cadence
+import DreamerKeeper from 0x01
+
+pub fun main():DreamKeeper.Dreamers? {
+    return DreamerKeeper.dreamer[]  //left blank because i wasn't able to input any info from a transaction becasuse of errors 
+}
+```
+
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
     
     
