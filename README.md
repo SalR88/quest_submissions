@@ -52,7 +52,7 @@ Please answer in the language of your choice.
 
 Explain why we wouldn't call changeGreeting in a script.
 
-#Scripts can't make changes, only view
+#Scripts can't make changes, only view#
 
 What does the AuthAccount mean in the prepare phase of the transaction?
 
