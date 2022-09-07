@@ -44,3 +44,86 @@ pub contract JacobTucker {
 //15:53:40  Deployment  Deployed Contract To: 0x03
 ```
 
+-----
+
+Chapter 2, Day 2
+
+Please answer in the language of your choice.
+
+Explain why we wouldn't call changeGreeting in a script.
+
+#Scripts can't make changes, only view
+
+What does the AuthAccount mean in the prepare phase of the transaction?
+
+#access information in account
+
+What is the difference between the prepare phase and the execute phase in the transaction?
+
+#prepare phase is to view and access account information and execute phase uses functions to make changes to the blockchain
+
+This is the hardest quest so far, so if it takes you some time, do not worry! I can help you in the Discord if you have questions.
+
+Add two new things inside your contract:
+
+A variable named myNumber that has type Int (set it to 0 when the contract is deployed)
+A function named updateMyNumber that takes in a new number named newNumber as a parameter that has type Int and updates myNumber to be newNumber
+Add a script that reads myNumber from the contract
+
+Add a transaction that takes in a parameter named myNewNumber and passes it into the updateMyNumber function. Verify that your number changed by running the script again.
+
+#Contract
+
+```cadence
+pub contract NumberQuest{
+
+    pub var myNumber: Int
+
+
+
+    pub fun number(): Int {
+        return self.myNumber
+    }
+
+
+    pub fun updateMyNumber() {
+        self.myNumber = 1
+    }
+
+    init() {
+        self.myNumber = 0
+    }
+
+   
+
+}
+```
+
+#Script
+
+```cadence
+import NumberQuest from 0x01
+
+pub fun main() {
+    log(NumberQuest.number())
+    }
+```
+
+#Transaction
+
+```cadence
+import NumberQuest from 0x01
+
+transaction() {
+    prepare(signer: AuthAccount) {
+    log(signer.address)
+    }
+
+    execute {
+      NumberQuest.updateMyNumber()
+    }
+}
+```
+-----------------
+
+
