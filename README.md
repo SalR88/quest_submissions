@@ -155,8 +155,10 @@ Explain what the force unwrap operator ! does, with an example different from th
 pub fun main(): String {
     let thing: {String: Int} = {"Hi": 1, "Bonjour": 2, "Hola": 3}
     return thing[1]!
+    }
     
     //the force-unwrap operator is returning the thing we put from the optional, this example returns "Hi"
+```
     
     
     
