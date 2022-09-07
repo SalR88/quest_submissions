@@ -87,7 +87,9 @@ pub contract NumberQuest{
 
 
     pub fun updateMyNumber() {
-        self.myNumber = 1
+        self.newNumber = 1
+        init() {
+        myNumber = newNumber
     }
 
     init() {
@@ -105,7 +107,7 @@ pub contract NumberQuest{
 import NumberQuest from 0x01
 
 pub fun main() {
-    log(NumberQuest.number())
+    return NumberQuest.number))
     }
 ```
 
@@ -115,12 +117,15 @@ pub fun main() {
 import NumberQuest from 0x01
 
 transaction() {
+
+    transaction(nyNewNumber: Int)
+    
     prepare(signer: AuthAccount) {
-    log(signer.address)
+    
     }
 
     execute {
-      NumberQuest.updateMyNumber()
+      NumberQuest.updateMyNumber(newNumber: myNewNumber)
     }
 }
 ```
