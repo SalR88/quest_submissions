@@ -151,6 +151,7 @@ pub main() {
 Explain what the force unwrap operator ! does, with an example different from the one I showed you (you can just change the type).
 
 #Force-unwrap example
+```cadence
 pub fun main(): String {
     let thing: {String: Int} = {"Hi": 1, "Bonjour": 2, "Hola": 3}
     return thing[1]!
