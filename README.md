@@ -107,7 +107,7 @@ pub contract NumberQuest{
 import NumberQuest from 0x01
 
 pub fun main() {
-    return NumberQuest.number))
+    return NumberQuest.number
     }
 ```
 
