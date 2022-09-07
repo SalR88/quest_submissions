@@ -182,8 +182,8 @@ Chapter 2 day 4
 
 **i was getting a lot of errors in flow playground and wasn't sure what the problem was. please take a look at the contract, transaction, and script to let me know what I'm doing wrong
 
-
-'''cadence
+contract
+```cadence
 pub contract DreamKeeper {    
 
     pub var dreamer: {String: Dreamers}
@@ -215,7 +215,7 @@ pub contract DreamKeeper {
 
 }
 ``` 
-
+transaction
 ```cadence
 import DreamKeeper from 0x01
 
@@ -229,7 +229,7 @@ transaction(dreamerName: String, dreamGuide: Int, dreamMonster: String, dreamAna
     }
 }
 ```
-
+script
 ```cadence
 import DreamerKeeper from 0x01
 
