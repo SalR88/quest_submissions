@@ -283,6 +283,69 @@ pub contract Test {
     }
 ```
 
+--------------------------------
+
+CHAPTER 3 DAY 2
+
+```cadence
+pub contract Test {
+
+    pub var arrayOfApples: @[Apple]
+    pub var dictionaryOfOranges: @{String: Orange}
+
+    pub resource Apple{
+        pub let appleType: String
+        init() {
+            self.appleType = "Red"
+        }
+    }
+
+    pub fun addAppleType(appleType: @Apple) {
+        self.arrayOfApples.append(<- appleType)
+    }
+
+    pub fun removeAppleType(index: Int): @Apple {
+        return <- self.arrayOfApples.remove(at: index)
+    }
+
+  
+
+
+
+
+    pub resource Orange{
+        pub let orange: String
+        init() {
+            self.orange = "Blood Red"
+        }
+    }
+
+    pub fun addOrangeType(orangeType: @Orange) {
+        let key = orangeType.orange
+
+        let oldOrange <- self.dictionaryofOranges[key] <- orangeType
+        
+        destroy oldOrange
+    }
+
+    pub fun removeOrangeType(key: String): @Orange {
+        let orangeType <- self.dictionaryOfOranges.remove(key: key) ?? panic("Could not find the greeting!")
+        return <- orangeType
+    }
+
+    init() {
+        self.arrayOfApples <- []
+        self.dictionaryOfOranges <- {}
+    }
+
+}
+```
+
+-----------------------
+
+Chapter 3 Day 3
+
+
 
 
 
