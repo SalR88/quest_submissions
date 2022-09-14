@@ -244,6 +244,46 @@ Result
 -------
 
 
+CHAPTER 3 DAY 1
+
+In words, list 3 reasons why structs are different from resources.
+
+-Resources must be either moved or destroyed
+-Resources cannot be copied
+-Resources have a lot of rules preventing them from being copied
+
+Describe a situation where a resource might be better to use than a struct.
+
+For NFTs 
+
+What is the keyword to make a new resource?
+
+create
+
+Can a resource be created in a script or transaction (assuming there isn't a public function to create one)?
+No, the create keyword can only be used in a contract, but a function could be made for a transaction to call from a contract that utilizes the create keyword. 
+
+What is the type of the resource below?
+@Jacob
+
+```cadence
+pub contract Test {
+
+    // Hint: There's nothing wrong here ;)
+    pub resource Jacob {
+        pub let rocks: Bool
+        init() {
+            self.rocks = true
+        }
+    }
+
+    pub fun createJacob(): @Jacob { 
+        let myJacob <- create Jacob() 
+        return <- myJacob
+    }
+```
+
+
 
 
 
