@@ -147,7 +147,7 @@ In a script, initialize a dictionary that maps the Strings Facebook, Instagram, 
 
 #script for example dictionary 
 ```cadence
-pub main() {
+pub fun main() {
     var socialMedia: {String: Int} = {"reddit":2, "instagram": 1, "youtube": 3, "facebook": 0, "twitter": 0}
     log(socialMedia.keys)
 }
@@ -157,12 +157,12 @@ Explain what the force unwrap operator ! does, with an example different from th
 
 #Force-unwrap example
 ```cadence
-pub fun main(): String {
+pub fun main(): Int {
     let thing: {String: Int} = {"Hi": 1, "Bonjour": 2, "Hola": 3}
-    return thing[1]!
+    return thing[("Hi")]!
     }
     
-    //the force-unwrap operator is returning the thing we put from the optional, this example returns "Hi"
+    //the force-unwrap operator is returning the thing we put from the optional, this example returns 1
 ```
     
     
@@ -195,7 +195,7 @@ pub contract DreamKeeper {
         pub var dreamMonster: String
         pub var dreamAnalysis: String
 
-        init(_dreamerName: dreamerName, _dreamGuide: String, _dreamMonster: String, _dreamAnalysis: String) {
+        init(_dreamerName: String, _dreamGuide: String, _dreamMonster: String, _dreamAnalysis: String) {
         self.dreamerName = _dreamerName
         self.dreamGuide = _dreamGuide
         self.dreamMonster = _dreamMonster
@@ -203,7 +203,7 @@ pub contract DreamKeeper {
         }
     }
 
-    pub fun addDreamer (dreamerName: String, dreamGuide: String, dreamMonster: String, dreamAnalysist: String) {
+    pub fun addDreamer (dreamerName: String, dreamGuide: String, dreamMonster: String, dreamAnalysis: String) {
         let newDreamer = Dreamers(_dreamerName: dreamerName, _dreamGuide: dreamGuide, _dreamMonster: dreamMonster, _dreamAnalysis: dreamAnalysis)
         self.dreamer[dreamerName] = newDreamer
     }
@@ -219,7 +219,7 @@ transaction
 ```cadence
 import DreamKeeper from 0x01
 
-transaction(dreamerName: String, dreamGuide: Int, dreamMonster: String, dreamAnalysis: String) {
+transaction(dreamerName: String, dreamGuide: String, dreamMonster: String, dreamAnalysis: String) {
     prepare(acct: AuthAccount) {
     }
 
@@ -231,13 +231,16 @@ transaction(dreamerName: String, dreamGuide: Int, dreamMonster: String, dreamAna
 ```
 script
 ```cadence
-import DreamerKeeper from 0x01
+import DreamKeeper from 0x01
 
 pub fun main():DreamKeeper.Dreamers? {
-    return DreamerKeeper.dreamer[]  //left blank because i wasn't able to input any info from a transaction becasuse of errors 
+    return DreamKeeper.dreamer["Neo"]  //left blank because i wasn't able to input any info from a transaction becasuse of errors 
 }
 ```
-
+14:22:17 
+Script 
+Result
+{"type":"Optional","value":{"type":"Struct","value":{"id":"A.0000000000000001.DreamKeeper.Dreamers","fields":[{"name":"dreamerName","value":{"type":"String","value":"Neo"}},{"name":"dreamGuide","value":{"type":"String","value":"Morpheus"}},{"name":"dreamMonster","value":{"type":"String","value":"Mr Andersen"}},{"name":"dreamAnalysis","value":{"type":"String","value":"It's a sim"}}]}}}
 -------
 
 
